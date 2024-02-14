@@ -1,5 +1,5 @@
 function checkAnswer(selectedOption) {
-    const correctOption = document.querySelectorAll('li')[1]; // Change this to the correct option
+    const correctOption = document.querySelectorAll('li')[0]; // Change this to the correct option
     if (selectedOption === correctOption) {
         startCelebration();
     }
