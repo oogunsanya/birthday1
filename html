@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mom's Birthday Celebration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday Mom!</h1>
+        <p>Answer the question to start the celebration:</p>
+        <p id="question">What's Mom's favorite childhood memory?</p>
+        <ul>
+            <li id="option1" onclick="checkAnswer(this)">Building sandcastles at the beach</li>
+            <li id="option2" onclick="checkAnswer(this)">Baking cookies with grandma</li>
+            <li id="option3" onclick="checkAnswer(this)">Climbing trees in the backyard</li>
+        </ul>
+    </div>
+    <script src="confetti.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
