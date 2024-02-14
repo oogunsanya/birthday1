@@ -1,26 +1,31 @@
 function checkAnswer(selectedOption) {
-    const correctOption = document.getElementById("option2"); // Change this to the correct option
+    const correctOption = document.querySelectorAll('li')[1]; // Change this to the correct option
     if (selectedOption === correctOption) {
         startCelebration();
     }
 }
 
 function startCelebration() {
-    confetti.start();
+    const audio = document.getElementById('birthday-audio');
+    const canvas = document.getElementById('confetti-canvas');
+    const container = document.querySelector('.container');
+
+    audio.play();
+    
+    confetti.create(canvas, {
+        resize: true,
+        useWorker: true
+    })({ particleCount: 200, spread: 200 });
+    
     setTimeout(() => {
-        confetti.stop();
-        displayBirthdayMessage();
+        displayBirthdayMessage(container);
     }, 3000); // Adjust duration of confetti before displaying message
 }
 
-function displayBirthdayMessage() {
-    const container = document.querySelector(".container");
+function displayBirthdayMessage(container) {
     container.innerHTML = `
         <h1>Happy Birthday Mom!</h1>
         <p>Thank you for being the best mom ever!</p>
         <img src="balloons.gif" alt="Balloons" width="200">
-        <audio autoplay>
-            <source src="happy_birthday.mp3" type="audio/mpeg">
-        </audio>
     `;
 }
